@@ -37,7 +37,7 @@ function startGame() {
         world = new World();
         world.loadWorld(worldData);
         player = new Player(name, world.rooms[1]);
-
+        //test
         // Show commands
         printHelp();
 
