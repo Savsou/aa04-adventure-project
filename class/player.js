@@ -67,7 +67,16 @@ class Player {
     eatItem(itemName) {
         // Allow the player to eat food items, but not non-food items
 
-        // Your code here
+        let item = this.getItemByName(itemName);
+        let itemIndex = this.items.findIndex(item => item.name.toLowerCase() ===
+            itemName.toLowerCase())
+
+        if (item instanceof Food) {
+            this.items.splice(itemIndex, 1)
+            return true;
+        } else {
+            return false;
+        }
     }
 
     getItemByName(name) {
