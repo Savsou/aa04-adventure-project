@@ -45,12 +45,11 @@ class Room {
 
     getItemByName(name) {
         // Retrieves an item from a room by item name
-
-        // Your code here 
+        return this.items.find(item => item.name.toLowerCase() === name.toLowerCase())
     }
 
 }
 
 module.exports = {
-  Room,
+    Room,
 };
