@@ -27,7 +27,7 @@ class Player {
             console.log(`${this.name} is not carrying anything.`);
         } else {
             console.log(`${this.name} is carrying:`);
-            for (let i = 0 ; i < this.items.length ; i++) {
+            for (let i = 0; i < this.items.length; i++) {
                 console.log(`  ${this.items[i].name}`);
             }
         }
@@ -36,28 +36,26 @@ class Player {
     takeItem(itemName) {
         // Picks up an item from the current room into the player's inventory
 
-        // Your code here 
     }
 
     dropItem(itemName) {
         // Drops an item the player is holding into their current room
 
-        // Your code here 
+        // Your code here
     }
 
     eatItem(itemName) {
         // Allow the player to eat food items, but not non-food items
 
-        // Your code here 
+        // Your code here
     }
 
     getItemByName(name) {
         // Retrieves an item from a player's inventory by item name
-
-        // Your code here 
+        return this.items.find(item => item.name.toLowerCase() === name.toLowerCase())
     }
 }
 
 module.exports = {
-  Player,
+    Player,
 };
