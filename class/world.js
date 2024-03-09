@@ -14,7 +14,7 @@ class World {
 
         // Instantiate new room objects
         // Get name, id and description from room data
-        for (let i = 0 ; i < roomList.length ; i++) {
+        for (let i = 0; i < roomList.length; i++) {
 
             let roomData = roomList[i];
             let newRoom = new Room(roomData.name, roomData.description);
@@ -24,7 +24,7 @@ class World {
 
         // Connect rooms by ID
         // Note that all rooms must be created before they can be connected
-        for (let i = 0 ; i < roomList.length ; i++) {
+        for (let i = 0; i < roomList.length; i++) {
 
             let roomID = roomList[i].id;
             let roomConnections = roomList[i].exits;
@@ -38,13 +38,31 @@ class World {
         }
 
         // Instantiate items using data stored in the itemList variable
-            // A non-food item should be instantiated as an instance of the `Item` class
-            // A food item should be instantiated as an instance of the `Food` class
+        // A non-food item should be instantiated as an instance of the `Item` class
+        // A food item should be instantiated as an instance of the `Food` class
 
-        // Your code here 
+        for (let i = 0; i < itemList.length; i++) {
+            // let food = itemList[i].isFood
+            let itemData = itemList[i];
+            let newItem;
+
+            if (itemData.isFood) {
+                newItem = new Food(itemData.name, itemData.description)
+                // this.rooms[itemData.room].push(newFood)
+            } else {
+                newItem = new Item(itemData.name, itemData.description)
+                // this.rooms[itemData.room].push(newItem)
+            }
+
+            let itemRoom = this.rooms[itemData.room]
+            itemRoom.items.push(newItem)
+
+        }
+
+
     }
 }
 
 module.exports = {
-  World,
+    World,
 };
